@@ -11,6 +11,8 @@
 #*****************************************************************
 
 # In this case we are using .jar insted of .war
+# clear && mvn clean && chmod +x mvnw && ./mvnw install && docker-compose build && docker-compose up
+
 
 FROM openjdk:12-alpine
 COPY target/PreAuthorization-1.0.0-SNAPSHOT-fat.jar /preauthorization.jar
