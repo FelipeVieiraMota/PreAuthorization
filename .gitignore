@@ -187,3 +187,7 @@ nbdist/
 
 
 .idea/vcs.xml
+
+.target
+
+mvnw.cmd
