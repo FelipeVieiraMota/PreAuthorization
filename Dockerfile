@@ -6,7 +6,7 @@
 #   export JAVA_HOME &&
 #   mvn clean &&
 #   ./mvnw install &&
-#   docker build -t preauthorization . &&
+#   docker build -t app/preauthorization:alphine . &&
 #   docker run -p 8888:8888 preauthorization
 #*****************************************************************
 

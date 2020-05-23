@@ -1,14 +1,26 @@
 version : "3.3"
+
+networks:
+  custom:
+    external: true
+
 services:
   api-preauthorization:
       build:
         context: "."
+      image: app/preauthorization:alphine
       environment:
         entity_id: 8ac7a4ca6db97ef1016dbe9214e70aac
         authentication: Bearer OGFjN2E0Y2E2ZGI5N2VmMTAxNmRiZTkwZTMxZDBhYTh8WENkRUs0NHJubQ==
         url_end_point: https://test.oppwa.com/v1/payments
+        captureDns: capture-container
         # dockerfile: "" If we changed Dockerfile name we can put it here in this line
       container_name: preauthorization-container
       restart: always
+      networks:
+        - custom
+      external_links:
+        - api-capure:app/capture
       ports:
-          - "8888:8888"
+        - "8888:8888"
+
