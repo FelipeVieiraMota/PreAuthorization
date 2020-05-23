@@ -13,7 +13,7 @@ public class MainVerticle extends AbstractVerticle {
   public void start(Promise<Void> startPromise) throws Exception {
     Router router = Router.router(vertx);
     router
-      .get("/")
+      .get("/preauthorization")
       .handler(request ->{
         request
           .response()
