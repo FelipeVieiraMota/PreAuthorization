@@ -6,9 +6,10 @@ networks:
 
 services:
   api-preauthorization:
-      build:
-        context: "."
-      image: app/preauthorization:alphine
+      #build:
+      #  context: "."
+      #image: preauthorization
+      image: felipemotadocker/preauthorization:1.0.0 
       environment:
         entity_id: 8ac7a4ca6db97ef1016dbe9214e70aac
         authentication: Bearer OGFjN2E0Y2E2ZGI5N2VmMTAxNmRiZTkwZTMxZDBhYTh8WENkRUs0NHJubQ==
@@ -20,7 +21,7 @@ services:
       networks:
         - custom
       external_links:
-        - api-capure:app/capture
+        - api-capure:capture
       ports:
         - "8888:8888"
 
